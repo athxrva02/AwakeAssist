@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="static/dashboard.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo"><a href="#">Drowsy</a></div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('contact')}}">Contact</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+   
+    <div class="text">Hello! You are logged in.</div>
+    <a href="{{ url_for('drowsy') }}">
+        <button>Start monitoring</button>
+    </a>
+    <!-- <a href="{{url_for('closemail')}}">
+        <button>Add Close Email</button> -->
+
+    <a href="{{url_for('logout')}}">
+        <button>Exit monitoring :)</button>
+    </a> 
+  </nav>
+  
+  
+  
+  <div class="banner"></div>
+  </div>
+  
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      menu.classList.add("active");
+      menuBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+      body.classList.add("disabledScroll");
+    }
+    cancelBtn.onclick = ()=>{
+      menu.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      body.classList.remove("disabledScroll");
+    }
+
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+
+
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <h1>Hello you are logged in.</h1>
+    
+    <a href="{{ url_for('drowsy') }}">Start monitoring</a>
+    <a href="{{url_for('logout')}}">Press here to logout</a>
+    <a href="{{url_for('closemail')}}">Add your close ones</a>
+</body>
+
+</html> -->

@@ -1,0 +1,137 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1>Login Authentication System in Flask.</h1>
+    <a href="{{ url_for('login') }}">Login Page</a><br>
+    <a href="{{ url_for('register') }}">Register Page</a><br>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drowsy</title>
+    <link rel="stylesheet" href="static/style.css">
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo"><a href="#">Drowsy</a></div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="{{url_for('home')}}">Home</a></li>
+        <li><a href="{{url_for('contact')}}">Contact</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+
+    <!-- <div class="contain">
+      <div class="contain-left">
+        <p>Hello Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis esse assumenda quas laborum minus? Inventore voluptas, ex totam sequi qui repellat, culpa nisi, provident ut aperiam aliquid quibusdam ratione maiores!</p>
+      </div>
+      <div class="contain-right">
+          <img src="static/home-img-1.jpg" alt="">
+      </div>
+    </div> -->
+
+    <div class="con">
+      <div class="con-left">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, cupiditate, sit incidunt molestiae, accusamus animi id eius harum exercitationem iusto provident earum cumque mollitia neque consectetur officia libero qui iste!
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim consectetur magnam perspiciatis sunt labore cupiditate quo architecto, quod consequuntur a dolor id autem blanditiis sequi libero omnis odit. Natus, laudantium?
+      </div>
+      <div class="con-right">
+        <img src="static/pic1.jpeg" alt="">
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="container">
+      <img src="static/img1.png" alt="Avatar" class="image">
+      <div class="overlay">
+        <img src="static/img2.png" alt="Avatar" class="image">
+          <div class="overlay">
+            <img src="static/img3.png" alt="Avatar" class="image">
+          </div>
+      </div>
+    </div> -->
+    
+  </nav>
+  
+  
+  
+  <div class="banner"></div>
+ 
+  </div>
+  
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      menu.classList.add("active");
+      menuBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+      body.classList.add("disabledScroll");
+    }
+    cancelBtn.onclick = ()=>{
+      menu.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      body.classList.remove("disabledScroll");
+    }
+
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+
+
+</body>
+</html>
